@@ -1,5 +1,9 @@
 
 export const API_BASE_URL_ENV = () => {
+    const fromEnv = process.env.REACT_APP_API_BASE_URL;
+    if (fromEnv && typeof fromEnv === 'string' && fromEnv.trim() !== '') {
+        return fromEnv.replace(/\/+$/, '');
+    }
     return 'http://165.232.103.85/api';
 }
 
