@@ -1,0 +1,179 @@
+/* Dashboard styles to mirror design */
+.dashboard-page {
+  background: #f9fafb;
+  min-height: 100vh;
+  padding-bottom: 24px;
+
+  .page-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .page-subtitle {
+    color: #6b7280;
+    margin-top: 2px;
+  }
+  .date-input {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+    background: #ffffff;
+  }
+  .section-heading {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 16px 0 12px 0;
+  }
+  .stat-card,
+  .mini-card,
+  .section-card {
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border: none;
+    background: #ffffff;
+  }
+
+  .stat-card {
+    .card-body {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 16px;
+    }
+    .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #f3f4f6;
+      color: #111827;
+      font-size: 20px;
+      flex: 0 0 auto;
+
+      &.variant-gold {
+        background: #FEF3C7; /* amber-100 */
+        color: #B45309; /* amber-700 */
+      }
+      &.variant-blue {
+        background: #DBEAFE; /* blue-100 */
+        color: #1D4ED8; /* blue-600 */
+      }
+      &.variant-green {
+        background: #DCFCE7; /* green-100 */
+        color: #047857; /* emerald-700 */
+      }
+    }
+    .amount {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.1;
+      .currency {
+        font-size: 12px;
+        color: #6b7280;
+        font-weight: 600;
+        margin-left: 6px;
+      }
+    }
+    .label {
+      color: #6b7280;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+  }
+
+  .mini-card {
+    .card-body {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 16px;
+    }
+    .icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #f3f4f6;
+      color: #111827;
+      font-size: 18px;
+      flex: 0 0 auto;
+
+      &.variant-indigo {
+        background: #E0E7FF; /* indigo-100 */
+        color: #4338CA; /* indigo-700 */
+      }
+      &.variant-emerald {
+        background: #D1FAE5; /* emerald-100 */
+        color: #047857; /* emerald-700 */
+      }
+      &.variant-amber {
+        background: #FEF3C7; /* amber-100 */
+        color: #B45309; /* amber-700 */
+      }
+      &.variant-slate {
+        background: #E5E7EB; /* slate-200 */
+        color: #374151; /* slate-700 */
+      }
+    }
+    .value {
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .label {
+      color: #6b7280;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+  }
+
+  .section-card {
+    .card-body {
+      padding: 16px;
+    }
+    .section-title {
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+  }
+
+  .section-grid {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    .stage {
+      padding: 12px 16px;
+      border-right: 1px solid #e5e7eb;
+      &:last-child { border-right: 0; }
+    }
+  }
+  .stage-title {
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .projects-count {
+    color: #6b7280;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .stage-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+    span:first-child {
+      color: #6b7280;
+    }
+    span:last-child {
+      color: #10b981;
+      font-weight: 600;
+    }
+  }
+}
+

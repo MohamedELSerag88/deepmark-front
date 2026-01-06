@@ -1,0 +1,117 @@
+/* User profile page styles to mirror the design */
+.user-profile-page {
+  .avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 999px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .muted {
+    color: #6b7280;
+  }
+  .profile-tabs {
+    margin-top: 1.25rem;
+    .nav-link {
+      border: none;
+      color: #6b7280;
+    }
+    .nav-link.active {
+      color: #111827;
+      border-bottom: 2px solid #111827;
+      font-weight: 600;
+    }
+  }
+  .info-card {
+    margin-top: 1rem;
+    .field-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 6px;
+      border-bottom: 1px solid #f3f4f6;
+      .label {
+        color: #6b7280;
+        font-size: 0.9rem;
+      }
+      .value {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .projects-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    .table thead th {
+      background: #f3f4f6;
+      color: #6b7280;
+      font-weight: 600;
+      border-top: none;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .table tbody td {
+      vertical-align: middle;
+    }
+  }
+
+  .payments-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    .table thead th {
+      background: #f3f4f6;
+      color: #6b7280;
+      font-weight: 600;
+      border-top: none;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .table tbody td {
+      vertical-align: middle;
+    }
+  }
+}
+
+/* Reuse modal enhancements from Users list */
+.edit-user-modal {
+  .modal-content {
+    border-radius: 14px;
+    border: none;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  }
+  .modal-header {
+    border-bottom: 1px solid #eef2f7;
+    .btn-close { display: none; }
+  }
+  .modal-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #EEF2FF;
+    color: #4F46E5;
+  }
+  .title {
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  .form-grid label {
+    color: #6b7280;
+    font-weight: 600;
+  }
+  .form-grid input {
+    height: 44px;
+    border-radius: 10px;
+    border-color: #e5e7eb;
+  }
+  .modal-footer {
+    border-top: 1px solid #eef2f7;
+  }
+}
