@@ -1,5 +1,5 @@
 import React ,{useState} from "react"
-login	(blocked:mixed-content)	xhr	AuthService.js:14import { Helmet } from "react-helmet-async" 
+import { Helmet } from "react-helmet-async" 
 const ResetPassword = (props) => {
    
   return (
