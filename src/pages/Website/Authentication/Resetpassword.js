@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import MetaTags from "react-meta-tags";  
+import { Helmet } from "react-helmet-async";  
 
  
 const ResetPassword = (props) => {
@@ -7,9 +7,9 @@ const ResetPassword = (props) => {
  
   return (
     <React.Fragment>
-      <MetaTags>
+      <Helmet>
         <title>Reset Password</title>
-      </MetaTags>
+      </Helmet>
       <div className='account-pages'>
       Reset Password
         </div>

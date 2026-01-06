@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 import imgLogo from "assets/images/logo.png";
 import { Card, CardBody, Col, Container, Row } from "reactstrap";
 import { SuccessOk } from "configs/statusCode";
@@ -25,9 +25,9 @@ const Register = (props) => {
 
   return (
     <React.Fragment>
-      <MetaTags>
-        <title> Register </title>
-      </MetaTags>
+      <Helmet>
+        <title>Register</title>
+      </Helmet>
       <div className='account-pages'>
         <div className="bgImage">
           <Container fluid>

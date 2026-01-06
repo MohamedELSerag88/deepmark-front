@@ -9,6 +9,7 @@ import NonAuthLayout from "./components/NonAuthLayout";
 import "react-toastify/dist/ReactToastify.css";
  import { adminPrefix } from "./configs/routePrefix";
 import { websiteAuthRoutes, websiteRoutes } from "./routes/websiteRoutes";
+import { HelmetProvider } from "react-helmet-async";
  
 import NonAuthBuyerLayout from "./components/Website/NonAuthBuyerLayout";
 import "./App.scss";
@@ -31,6 +32,7 @@ const App = (props) => {
         // className={`${AuthData.lang !== "ar" ? "":"ar-wrapper" }`}
         >
         <ToastContainer />
+        <HelmetProvider>
         <Router>
           {/* <ScrollToTop /> */}
           <Switch>
@@ -97,6 +99,7 @@ const App = (props) => {
               ))} */}
           </Switch>
         </Router>
+        </HelmetProvider>
       </div>
     </React.Fragment>
   );

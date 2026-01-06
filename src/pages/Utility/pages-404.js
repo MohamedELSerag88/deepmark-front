@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 
 //Import Images
  
@@ -10,9 +10,9 @@ const Pages404 = () => {
   return (
     <React.Fragment>
       <div className='account-pages my-5 pt-5'>
-        <MetaTags>
+        <Helmet>
           <title>404 Error Page</title>
-        </MetaTags>
+        </Helmet>
         <Container>
           <Row>
             <Col lg='12'>

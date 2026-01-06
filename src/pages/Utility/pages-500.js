@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 import { Container, Row, Col } from "reactstrap";
 
 //Import Images
@@ -9,9 +9,9 @@ const Pages500 = () => {
   return (
     <React.Fragment>
       <div className='account-pages my-5 pt-5'>
-        <MetaTags>
-          <title>500 Error Page </title>
-        </MetaTags>
+        <Helmet>
+          <title>500 Error Page</title>
+        </Helmet>
         <Container>
           <Row>
             <Col lg='12'>

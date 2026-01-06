@@ -1,14 +1,14 @@
 import React  from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
  
 const Register = (props) => {
  
 
   return (
     <React.Fragment>
-      <MetaTags>
-        <title> sign up </title>
-      </MetaTags>
+      <Helmet>
+        <title>sign up</title>
+      </Helmet>
       <div  >
         <div  >
  

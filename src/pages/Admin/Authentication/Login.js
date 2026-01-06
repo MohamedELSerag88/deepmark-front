@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 import { Card, CardBody, Col, Container, Row, FormGroup, CardText } from "reactstrap"; 
 // import { SuccessOk } from "configs/statusCode";
 import { adminPrefix } from './../../../configs/routePrefix';
@@ -82,9 +82,9 @@ const Login = (props) => {
   return (
     <React.Fragment>
       <div className="admin-container">
-        <MetaTags>
-          <title> Login </title>
-        </MetaTags>
+        <Helmet>
+          <title>Login</title>
+        </Helmet>
         <div className="bgGray height100">
           <Container>
             <Row className="justify-content-center">

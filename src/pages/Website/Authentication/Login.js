@@ -1,5 +1,5 @@
 import React from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
  import {  Container } from "reactstrap"; 
   
 const Login = (props) => {
@@ -7,9 +7,9 @@ const Login = (props) => {
 
   return (
     <React.Fragment>
-      <MetaTags>
-        <title> Login </title>
-      </MetaTags>
+      <Helmet>
+        <title>Login</title>
+      </Helmet>
       <div  >
         <div  >
           <Container fluid>
