@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
  
 const ForgetPassword = (props) => {
   
   return (
     <React.Fragment>
-      <MetaTags>
+      <Helmet>
         <title>Reset Password</title>
-      </MetaTags>
+      </Helmet>
       <div  >
            
        </div>
