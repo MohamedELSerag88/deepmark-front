@@ -4,6 +4,11 @@ export const API_BASE_URL_ENV = () => {
     if (fromEnv && typeof fromEnv === 'string' && fromEnv.trim() !== '') {
         return fromEnv.replace(/\/+$/, '');
     }
+    // On HTTPS (e.g., Vercel), use same-origin path to avoid mixed content;
+    // pair this with a platform rewrite to your HTTP API.
+    if (typeof window !== 'undefined' && window.location && window.location.protocol === 'https:') {
+        return '/api';
+    }
     return 'http://165.232.103.85/api';
 }
 
