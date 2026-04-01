@@ -89,11 +89,36 @@ const AdminUsers = () => {
 
   const handleExport = async () => {
     try {
-      const { data } = await service.export();
-      setExportFile(data?.file || null);
-      setExportOpen(true);
+      // Prefer direct download via blob
+      const http = (await import("../../../services/HttpService")).default;
+      // Ensure JWT header is set
+      const { getJwt } = await import("../../../services/Admin/AuthService");
+      http.setJwt(getJwt());
+      const res = await service.exportDownload();
+      const response = await res; // promise from dynamic import
+
+      const blob = new Blob([response.data], { type: "text/csv;charset=utf-8" });
+      // Try to get filename from header
+      const dispo = response.headers?.["content-disposition"] || "";
+      const match = dispo.match(/filename="?([^"]+)"?/i);
+      const filename = match?.[1] || `users_export_${new Date().toISOString().slice(0,10)}.csv`;
+
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.URL.revokeObjectURL(url);
     } catch (e) {
-      setExportFile(null);
+      // Fallback: old modal flow if blob fails
+      try {
+        const { data } = await service.export();
+        setExportFile(data?.file || null);
+      } catch (_) {
+        setExportFile(null);
+      }
       setExportOpen(true);
     }
   };

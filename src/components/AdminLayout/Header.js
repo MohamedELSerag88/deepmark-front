@@ -38,6 +38,15 @@ const Header = () => {
 						<NavItem>
 							<NavLink to={`${adminPrefix}/brand`} className="nav-link">Brand</NavLink>
 						</NavItem>
+						<NavItem>
+							<NavLink to={`${adminPrefix}/questions`} className="nav-link">Questions</NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink to={`${adminPrefix}/plans`} className="nav-link">Plans</NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink to={`${adminPrefix}/meetings`} className="nav-link">Meetings</NavLink>
+						</NavItem>
 					</Nav>
 					<Nav className="ms-auto" navbar>
 					<Dropdown

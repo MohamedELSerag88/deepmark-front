@@ -11,16 +11,24 @@ import AdminUsers from "../pages/Admin/Users"
 import AdminUserProfile from "../pages/Admin/Users/Profile"
 import AdminUsersExport from "../pages/Admin/Users/Export"
 import AdminBrand from "../pages/Admin/Brand"
+import AdminBrandShow from "../pages/Admin/Brand/Show"
+import AdminQuestions from "../pages/Admin/Questions"
+import AdminPlans from "../pages/Admin/Plans"
+import AdminMeetings from "../pages/Admin/Meetings"
  import { Redirect } from "react-router-dom"
  const adminRoutes = [
   { path: "/logout", component: Logout },
 
   { path: "/pages-404", component: Pages404 },
   { path: "/dashboard", component: AdminDashBoard },
+  { path: "/questions", component: AdminQuestions },
+  { path: "/plans", component: AdminPlans },
+  { path: "/meetings", component: AdminMeetings },
   { path: "/users/export", component: AdminUsersExport },
   { path: "/users/:id", component: AdminUserProfile },
   { path: "/users", component: AdminUsers },
   { path: "/brand", component: AdminBrand },
+  { path: "/brands/:id", component: AdminBrandShow },
  
 
   { path: "*", component: () => <Redirect to='/admin/pages-404' /> },

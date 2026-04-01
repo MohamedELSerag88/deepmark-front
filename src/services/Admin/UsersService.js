@@ -10,6 +10,15 @@ export default class UsersService extends BaseService {
   export() {
     return this.getList.call({ apiEndpoint: baseUrl + "/export" }, {});
   }
+  exportDownload() {
+    // raw CSV download (blob)
+    return import("../HttpService").then(({ default: http }) =>
+      http.get(baseUrl + "/export/download", {
+        responseType: "blob",
+        headers: { Accept: "text/csv" },
+      })
+    );
+  }
   projects(userId, params = {}) {
     return this.getList.call({ apiEndpoint: `${baseUrl}/${userId}/projects` }, params);
   }

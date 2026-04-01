@@ -13,32 +13,37 @@ axios.defaults.headers.common["Accept"] = "application/json";
 // axios.defaults.httpsAgent = new https.Agent({ rejectUnauthorized: false });
 
 axios.interceptors.response.use(null, async (error) => {
-    console.log(error.response);
-      const expectedError =
-    error.response &&
-    error.response.status >= 401 &&
-    error.response.status < 500;
-  // if (error.response && error.response.status === 401) {
-  //   if (error.response.data.data.prefix === "admin") {
-  //     let AdminAuthService = await import("./Admin/AuthService");
-  //     AdminAuthService.logout();
-  //     window.location = `${adminPrefix}/login`;
-  //   } else if (error.response.data.data.prefix === "client") {
-  //     let AuthService = await import("./Website/AuthService");
-  //     AuthService.logout();
-  //     window.location = `/`;
-  //   }
-  // }
-  if (!error.message) {
+  const status = error?.response?.status;
+  const expectedError =
+    error?.response &&
+    status >= 401 &&
+    status < 500;
 
-  }else if (!expectedError) {
+  // Redirect to admin login on Unauthorized
+  if (status === 401) {
+    try {
+      const AdminAuth = await import("./Admin/AuthService");
+      AdminAuth.logout();
+    } catch (_) {}
+    try {
+      const { adminPrefix } = await import("../configs/routePrefix");
+      window.location = `${adminPrefix}/login`;
+    } catch (_) {
+      window.location = "/admin/login";
+    }
+    return Promise.reject(error);
+  }
 
+  if (!error?.message) {
+    // no-op
+  } else if (!expectedError) {
     toast.error("An unexpected error occurred.");
   } else {
-     toast.error(error.response.data.error);
-   }
+    const msg = error?.response?.data?.error || error?.message;
+    if (msg) toast.error(msg);
+  }
 
-  // return Promise.reject(error);
+  return Promise.reject(error);
 });
 
 function setJwt(jwt) {
