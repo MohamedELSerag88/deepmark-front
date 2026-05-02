@@ -80,6 +80,7 @@ function collectShortlistNames(favorites, rawProjects) {
   };
   if (Array.isArray(favorites)) {
     favorites.forEach((fav) => {
+      add(fav?.name);
       const items = fav?.response?.items;
       if (Array.isArray(items)) {
         items.forEach((it) => add(it?.name));
