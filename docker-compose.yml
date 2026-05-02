@@ -1,0 +1,9 @@
+services:
+  webkicks-frontend:
+    build:
+      context: .
+      args:
+        REACT_APP_API_BASE_URL: ${REACT_APP_API_BASE_URL:-http://deepmark.local/api}
+    ports:
+      - "${FRONTEND_PORT:-3000}:80"
+    restart: unless-stopped
