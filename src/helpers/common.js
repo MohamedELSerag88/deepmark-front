@@ -9,7 +9,8 @@ export const API_BASE_URL_ENV = () => {
     if (typeof window !== 'undefined' && window.location && window.location.protocol === 'https:') {
         return '/api';
     }
-    return 'http://165.232.103.85/api';
+    return 'http://deepmark.local/api';
+    // return 'http://165.232.103.85/api';
 }
 
 export const GET_AUTH_USER = () => JSON.parse(localStorage.getItem('auth'))

@@ -42,10 +42,28 @@ const Header = () => {
 							<NavLink to={`${adminPrefix}/questions`} className="nav-link">Questions</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink to={`${adminPrefix}/plans`} className="nav-link">Plans</NavLink>
+							<NavLink to={`${adminPrefix}/meetings`} className="nav-link">Meetings</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink to={`${adminPrefix}/meetings`} className="nav-link">Meetings</NavLink>
+							<NavLink to={`${adminPrefix}/marketing/settings`} className="nav-link">Mkt Settings</NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink to={`${adminPrefix}/marketing/home-sections`} className="nav-link">Sections</NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink to={`${adminPrefix}/marketing/projects`} className="nav-link">Portfolio</NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink to={`${adminPrefix}/marketing/blogs`} className="nav-link">Blogs</NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink to={`${adminPrefix}/marketing/faqs`} className="nav-link">FAQs</NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink to={`${adminPrefix}/marketing/pricing`} className="nav-link">Pricing</NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink to={`${adminPrefix}/marketing/contact-submissions`} className="nav-link">Contacts</NavLink>
 						</NavItem>
 					</Nav>
 					<Nav className="ms-auto" navbar>
