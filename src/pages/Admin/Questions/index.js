@@ -14,6 +14,7 @@ const AdminQuestions = () => {
     question_en: "",
     question_ar: "",
     question_type: "",
+    prompt_key: "",
     description_en: "",
     description_ar: "",
     why_matters: "",
@@ -45,6 +46,7 @@ const AdminQuestions = () => {
       question_en: "",
       question_ar: "",
       question_type: "",
+      prompt_key: "",
       description_en: "",
       description_ar: "",
       why_matters: "",
@@ -62,6 +64,7 @@ const AdminQuestions = () => {
       question_en: q.question_en || "",
       question_ar: q.question_ar || "",
       question_type: q.question_type || "",
+      prompt_key: q.prompt_key || "",
       description_en: q.description_en || "",
       description_ar: q.description_ar || "",
       why_matters: q.why_matters || "",
@@ -89,6 +92,7 @@ const AdminQuestions = () => {
           question_en: form.question_en,
           question_ar: form.question_ar,
           question_type: form.question_type,
+          prompt_key: form.prompt_key || null,
           description_en: form.description_en,
           description_ar: form.description_ar,
           why_matters: form.why_matters,
@@ -103,6 +107,7 @@ const AdminQuestions = () => {
           question_en: form.question_en,
           question_ar: form.question_ar,
           question_type: form.question_type,
+          prompt_key: form.prompt_key || null,
           description_en: form.description_en,
           description_ar: form.description_ar,
           why_matters: form.why_matters,
@@ -184,21 +189,23 @@ const AdminQuestions = () => {
             <Table hover responsive className="mb-0">
               <thead>
                 <tr>
-                  <th className="w-50">Question (EN)</th>
-                  <th className="w-25">Type</th>
-                  <th className="text-end w-25">Actions</th>
+                  <th className="w-40">Question (EN)</th>
+                  <th className="w-20">Type</th>
+                  <th className="w-20">Prompt key</th>
+                  <th className="text-end w-20">Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {list.length === 0 && !loading && (
                   <tr>
-                    <td colSpan="3" className="text-center text-muted py-4">No questions found.</td>
+                    <td colSpan="4" className="text-center text-muted py-4">No questions found.</td>
                   </tr>
                 )}
                 {list.map((q) => (
                   <tr key={q.id}>
                     <td>{q.question_en}</td>
                     <td className="text-muted">{q.question_type || "-"}</td>
+                    <td className="text-muted"><code>{q.prompt_key || "-"}</code></td>
                     <td className="text-end">
                       <div className="d-inline-flex gap-2">
                         <Button size="sm" outline color="primary" onClick={() => openEdit(q)}>
@@ -232,13 +239,24 @@ const AdminQuestions = () => {
               <Input name="question_ar" value={form.question_ar} onChange={onChange} />
             </FormGroup>
             <Row className="g-2">
-              <Col md={6}>
+              <Col md={4}>
                 <FormGroup>
                   <Label>Type</Label>
                   <Input name="question_type" value={form.question_type} onChange={onChange} placeholder="text, select, multi_select ..." />
                 </FormGroup>
               </Col>
-              <Col md={6}>
+              <Col md={4}>
+                <FormGroup>
+                  <Label>Prompt key</Label>
+                  <Input
+                    name="prompt_key"
+                    value={form.prompt_key}
+                    onChange={onChange}
+                    placeholder="business_description, target_audience, ..."
+                  />
+                </FormGroup>
+              </Col>
+              <Col md={4}>
                 <FormGroup>
                   <Label>Example answer</Label>
                   <Input name="example_answer" value={form.example_answer} onChange={onChange} />

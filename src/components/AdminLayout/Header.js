@@ -42,6 +42,9 @@ const Header = () => {
 							<NavLink to={`${adminPrefix}/questions`} className="nav-link">Questions</NavLink>
 						</NavItem>
 						<NavItem>
+							<NavLink to={`${adminPrefix}/ai-prompts`} className="nav-link">AI Prompts</NavLink>
+						</NavItem>
+						<NavItem>
 							<NavLink to={`${adminPrefix}/meetings`} className="nav-link">Meetings</NavLink>
 						</NavItem>
 						<NavItem>

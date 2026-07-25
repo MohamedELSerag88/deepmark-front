@@ -13,6 +13,7 @@ import AdminUsersExport from "../pages/Admin/Users/Export"
 import AdminBrand from "../pages/Admin/Brand"
 import AdminBrandShow from "../pages/Admin/Brand/Show"
 import AdminQuestions from "../pages/Admin/Questions"
+import AdminAiPrompts from "../pages/Admin/AiPrompts"
 import AdminMeetings from "../pages/Admin/Meetings"
 import AdminMarketingSettings from "../pages/Admin/Marketing/Settings"
 import AdminMarketingHomeSections from "../pages/Admin/Marketing/HomeSections"
@@ -28,6 +29,7 @@ import AdminMarketingContact from "../pages/Admin/Marketing/ContactSubmissions"
   { path: "/pages-404", component: Pages404 },
   { path: "/dashboard", component: AdminDashBoard },
   { path: "/questions", component: AdminQuestions },
+  { path: "/ai-prompts", component: AdminAiPrompts },
   { path: "/meetings", component: AdminMeetings },
   { path: "/marketing/settings", component: AdminMarketingSettings },
   { path: "/marketing/home-sections", component: AdminMarketingHomeSections },
